@@ -105,7 +105,7 @@ if ( ! class_exists( 'Rainmaker' ) ) {
 					$text_domain        = 'icegram-rainmaker';
 					$plugin_abbr        = 'ig_rm';
 					$product_id         = IG_RM_PRODUCT_ID;
-					$plugin_plan        = get_option('ig_rm_plan','lite');
+					$plugin_plan        = self::get_plan();
 					$plugin_file_path   = IG_RM_PLUGIN_DIR . '/icegram-rainmaker.php'; //'icegram-rainmaker-premium.php'
 					$allowed_by_default = ( 'lite' === $plugin_plan ) ? false : true;
 				
@@ -1100,7 +1100,9 @@ if ( ! class_exists( 'Rainmaker' ) ) {
                     <!-- Subscription Form -->
                     <label class="rm_show_label form_selection"><input type="radio" class="form_type" name="form_data[type]" id="form_subscription" value="subscription" <?php echo ( isset( $form_data['type'] ) ) ? checked( $form_data['type'], 'subscription', false ) : 'checked="checked"'; ?> />
 						<?php _e( 'Subscription Form', 'icegram-rainmaker' ); ?></label>
+					
                     <ul class="rm-form-field-settings subscription_settings" <?php echo ( ! empty( $form_data['type'] ) && $form_data['type'] == 'subscription' ) ? '' : 'style="display:none"'; ?> >
+						
                         <!-- <input type="hidden" name="form_data[type]" value="<?php //echo ( !empty( $form_data['type']) && isset( $form_data['type']) ? $form_data['type']  : 'subscription' );
 						?>"> -->
                         <li class="rm-field-row rm-row-header">
@@ -1157,7 +1159,7 @@ if ( ! class_exists( 'Rainmaker' ) ) {
                     <br>
 
                     <!-- Contact Form -->
-                    <label class="rm_show_label form_selection"> <input type="radio" class="form_type" name="form_data[type]" id="form_contact" value="contact" <?php echo ( isset( $form_data['type'] ) ) ? checked( $form_data['type'], 'contact', false ) : ''; ?></label>
+                    <label class="rm_show_label form_selection"> <input type="radio" class="form_type" name="form_data[type]" id="form_contact" value="contact" <?php echo ( isset( $form_data['type'] ) ) ? checked( $form_data['type'], 'contact', false ) : ''; ?> />
 					<?php _e( 'Contact Form', 'icegram-rainmaker' ); ?></label>
 
                     <ul class="rm-form-field-settings contact_settings" <?php echo ( ! empty( $form_data['type'] ) && $form_data['type'] == 'contact' ) ? '' : 'style="display:none"'; ?> >
@@ -1597,6 +1599,21 @@ if ( ! class_exists( 'Rainmaker' ) ) {
 		public function is_premium() {
 
 			return self::is_max() || self::is_pro() || self::is_plus();
+		}
+
+		public function get_plan() {
+
+			if ( is_file( $this->plugin_path . '/max/max-class-icegram-rainmaker.php' ) ) {
+				$plan = 'max';
+			} elseif ( is_file( $this->plugin_path . '/pro/pro-class-icegram-rainmaker.php' ) ) {
+				$plan = 'pro';
+			} elseif ( is_file( $this->plugin_path . '/plus/plus-class-icegram-rainmaker.php' ) ) {
+				$plan = 'plus';
+			} else {
+				$plan = 'lite';
+			}
+
+			return $plan;
 		}
 
 		/**

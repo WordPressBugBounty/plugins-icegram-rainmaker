@@ -100,6 +100,10 @@
 		jQuery('.subscription_settings, .custom_settings, .contact_settings').not(form_selected).slideUp();
 		form_selected.slideDown();
 	});
+	var searchParams = new RegExp('[\?&]post_type=([^&#]*)').exec(window.location.href);
+	if (searchParams[1] === 'rainmaker_form') {
+		jQuery(".subscription_settings").slideDown();
+	}
 	//jQuery(".form_type").change();
 
 	jQuery(document).on("change keyup paste keydown",".auth-text-input", function(e) {

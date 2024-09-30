@@ -1,9 +1,9 @@
 <?php
-
+global $icegram_rainmaker;
 // BFCM 2022 Campaign
 if ( ( get_option( 'rm_offer_bfcm_2023_icegram' ) !== 'yes' ) && Rainmaker::is_offer_period( 'bfcm') ) { 
     $img_url = $this->plugin_url . '../assets/images/bfcm-collect-free-pro-banner-2023.png';
-    $ig_rm_plan = get_option( 'ig_rm_plan', 'lite' );
+    $ig_rm_plan = $icegram_rainmaker->get_plan();
     if( 'max' === $ig_rm_plan ){
         $img_url = $this->plugin_url .'../assets/images/bfcm-common-banner-2023.png';
     }

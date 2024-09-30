@@ -5,7 +5,7 @@ Tags:  subscription form, contact form, lead capture, mailchimp, wpforms, blog p
 Requires at least: 4.0
 Requires PHP: 5.5
 Tested up to: 6.6
-Stable tag: 1.3.15
+Stable tag: 1.3.16
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -165,12 +165,15 @@ You can add multiple email addresses separated by comma into the email id field 
 
 == Upgrade Notice ==
 
-**1.3.15**
+**1.3.16**
 
-* Update: WordPress 6.6 compatibility check
-* Fix: Missing authorization and nonce checks when connecting to Hubspot [ Thanks to Patchstack team ]
+* Update: UI/UX improvements
 
 == Changelog ==
+
+**1.3.16**
+
+* Update: UI/UX improvements
 
 **1.3.15**
 
