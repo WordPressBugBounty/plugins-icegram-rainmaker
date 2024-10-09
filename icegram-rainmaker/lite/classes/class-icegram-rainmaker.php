@@ -1603,11 +1603,11 @@ if ( ! class_exists( 'Rainmaker' ) ) {
 
 		public function get_plan() {
 
-			if ( is_file( $this->plugin_path . '/max/max-class-icegram-rainmaker.php' ) ) {
+			if ( file_exists( IG_RM_PLUGIN_DIR . '/max/max-class-icegram-rainmaker.php' ) ) {
 				$plan = 'max';
-			} elseif ( is_file( $this->plugin_path . '/pro/pro-class-icegram-rainmaker.php' ) ) {
+			} elseif ( file_exists( IG_RM_PLUGIN_DIR . '/pro/pro-class-icegram-rainmaker.php' ) ) {
 				$plan = 'pro';
-			} elseif ( is_file( $this->plugin_path . '/plus/plus-class-icegram-rainmaker.php' ) ) {
+			} elseif ( file_exists( IG_RM_PLUGIN_DIR . '/plus/plus-class-icegram-rainmaker.php' ) ) {
 				$plan = 'plus';
 			} else {
 				$plan = 'lite';
