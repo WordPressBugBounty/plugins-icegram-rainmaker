@@ -238,8 +238,8 @@ if ( ! class_exists( 'Rainmaker' ) ) {
 				$option_name = sanitize_text_field( $_GET['rm_option_name'] );
 				update_option( $option_name . '_icegram', 'yes', false );
 
-				if ( 'rm_offer_bfcm_2023' === $option_name ) {
-					$url = "https://www.icegram.com/rainmaker-pricing-table/?utm_source=in_app&utm_medium=rm_banner&utm_campaign=offer_bfcm_2023";
+				if ( 'rm_offer_bfcm_2024' === $option_name ) {
+					$url = "https://www.icegram.com/rainmaker-pricing-table/?utm_source=in_app&utm_medium=rm_banner&utm_campaign=offer_bfcm_2024";
 					header( "Location: {$url}" );
 					exit();
 				} else {
@@ -1424,8 +1424,9 @@ if ( ! class_exists( 'Rainmaker' ) ) {
     		foreach ( $form_data as $key => &$value ) {
 		        if ( is_array( $value ) ) {
 		            $value = self::sanitize_array($value);
-		        }
-		        else {
+		        } else if ( $value !== strip_tags( $value ) ) { // Check if value contains HTML.
+					$value = wp_kses_post( $value );
+				} else {
 		            $value = sanitize_text_field( $value );
 		        }
 		    }
@@ -1647,8 +1648,8 @@ if ( ! class_exists( 'Rainmaker' ) ) {
 				$offer_end_time 	= $current_ist_time;
 
 				if ( 'bfcm' === $offer_name ) {
-					$offer_start_time = strtotime( '2023-11-21 12:30:00' ); // Offer start time in IST
-					$offer_end_time   = strtotime( '2023-11-30 12:30:00' ); // Offer end time in ISTsdf
+					$offer_start_time = strtotime( '2024-11-26 12:30:00' ); // Offer start time in IST
+					$offer_end_time   = strtotime( '2024-12-05 12:30:00' ); // Offer end time in ISTsdf
 				}
 	
 				$is_offer_period = $current_ist_time >= $offer_start_time && $current_ist_time <= $offer_end_time;

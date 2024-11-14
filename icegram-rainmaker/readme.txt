@@ -5,7 +5,7 @@ Tags:  subscription form, contact form, lead capture, mailchimp, wpforms, blog p
 Requires at least: 4.0
 Requires PHP: 5.5
 Tested up to: 6.6.2
-Stable tag: 1.3.17
+Stable tag: 1.3.18
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -165,11 +165,15 @@ You can add multiple email addresses separated by comma into the email id field 
 
 == Upgrade Notice ==
 
-**1.3.17**
+**1.3.18**
 
-* Update: WordPress 6.6 compatibility check
+* Fix: HTML tags getting removed in GDPR field
 
 == Changelog ==
+
+**1.3.18**
+
+* Fix: HTML tags getting removed in GDPR field
 
 **1.3.17**
 
