@@ -26,6 +26,12 @@ if ( ! class_exists( 'Rm_Mailer_Email_Subscribers' ) ) {
 		*/
 		function get_email_subscribers_data() {
 
+			check_ajax_referer('rainmaker_admin_ajax_nonce', 'nonce');
+
+			if ( ! current_user_can('edit_posts')  ) {
+				return;
+			}
+
 			ob_start();
 
 			//this will return an array of results with the name and list_id of each mailing list

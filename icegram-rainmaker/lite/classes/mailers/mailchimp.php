@@ -29,6 +29,13 @@ if ( ! class_exists( 'Rm_Mailer_Mailchimp' ) ) {
 		* @Since 1.0
 		*/
 		function get_mailchimp_data() {
+
+			check_ajax_referer('rainmaker_admin_ajax_nonce', 'nonce');
+
+			if ( ! current_user_can('edit_posts')  ) {
+				return;
+			}
+			
 			$isKeyChanged = false;
 
 			$connected = false;
@@ -201,6 +208,13 @@ if ( ! class_exists( 'Rm_Mailer_Mailchimp' ) ) {
 		* @Since 1.0
 		*/
 		function update_mailchimp_authentication() {
+
+			check_ajax_referer('rainmaker_admin_ajax_nonce', 'nonce');
+
+			if ( ! current_user_can('edit_posts')  ) {
+				return;
+			}
+
 			$post          = $_POST;
 			$data          = array();
 			$api_key       = $post['authentication_token'];

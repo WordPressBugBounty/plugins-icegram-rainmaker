@@ -24,6 +24,12 @@ if ( ! class_exists( 'Rm_Mailer_MailPoet' ) ) {
 
 		function get_mailpoet_data() {
 
+			check_ajax_referer('rainmaker_admin_ajax_nonce', 'nonce');
+
+			if ( ! current_user_can('edit_posts')  ) {
+				return;
+			}
+
 			ob_start();
 
 			//this will return an array of results with the name and list_id of each mailing list

@@ -4,20 +4,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! class_exists( 'IG_Plugin_Usage_Tracker_V_2_0_0' ) ) {
+if ( ! class_exists( 'IG_Plugin_Usage_Tracker_V_2_0_1' ) ) {
 
 	/**
-	 * Class IG_Plugin_Usage_Tracker_V_2_0_0
+	 * Class IG_Plugin_Usage_Tracker_V_2_0_1
 	 *
 	 * Icegram tracker handler class is responsible for sending anonymous plugin
 	 * data to Icegram servers for users that actively allowed data tracking.
 	 *
-	 * @class       IG_Plugin_Usage_Tracker_V_2_0_0
+	 * @class       IG_Plugin_Usage_Tracker_V_2_0_1
 	 * @since       1.0.0
 	 *
 	 * @package     feedback
 	 */
-	class IG_Plugin_Usage_Tracker_V_2_0_0 {
+	class IG_Plugin_Usage_Tracker_V_2_0_1 {
 
 		/**
 		 * SDK version

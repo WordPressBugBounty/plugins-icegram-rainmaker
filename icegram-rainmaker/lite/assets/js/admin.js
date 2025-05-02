@@ -65,7 +65,9 @@
 		jQuery('#rm-list-details').find('.rm-loader').show();
 		var action = 'rm_get_'+val+'_data';
 		var form_id = jQuery('#post_ID').val();
-		var data = 'action='+action+'&form_id='+form_id;
+		var nonce = rainmaker_admin_data.nonce;	
+		var data = 'action='+action+'&form_id='+form_id+'&nonce='+nonce;
+
 		jQuery.ajax({
 			url: ajaxurl,
 			data: data,
@@ -101,7 +103,7 @@
 		form_selected.slideDown();
 	});
 	var searchParams = new RegExp('[\?&]post_type=([^&#]*)').exec(window.location.href);
-	if (searchParams[1] === 'rainmaker_form') {
+	if ( searchParams && searchParams[1] === 'rainmaker_form' ) {
 		jQuery(".subscription_settings").slideDown();
 	}
 	//jQuery(".form_type").change();
@@ -182,7 +184,8 @@
 		var auth_token = jQuery("#mailchimp_api_key").val();
 		var action = 'rm_update_mailchimp_authentication';
 		var option = jQuery('input.mailchimp-double-optin:checked').val();
-		var data = {action:action,authentication_token:auth_token,mailchimp_double_optin:option};
+		var nonce = rainmaker_admin_data.nonce;
+		var data = {action:action,authentication_token:auth_token,mailchimp_double_optin:option,nonce:nonce};
 		jQuery.ajax({
 			url: ajaxurl,
 			data: data,
@@ -212,7 +215,8 @@ jQuery("body").on( "click", "#auth-campaignmonitor", function(e){
 	var auth_token = jQuery("#campaignmonitor_api_key").val();
 	var clientID = jQuery('#campaignmonitor_client_id').val();
 	var action = 'rm_update_campaignmonitor_authentication';
-	var data = {action:action,clientID:clientID,authentication_token:auth_token};
+	var nonce = rainmaker_admin_data.nonce;
+	var data = {action:action,clientID:clientID,authentication_token:auth_token,nonce:nonce};
 	jQuery.ajax({
 		url: ajaxurl,
 		data: data,

@@ -32,6 +32,12 @@ if ( ! class_exists( 'Rm_Mailer_Hubspot_CRM' ) ) {
 
 		function get_hubspot_data() {
 
+			check_ajax_referer('rainmaker_admin_ajax_nonce', 'nonce');
+
+			if ( ! current_user_can('edit_posts')  ) {
+				return;
+			}
+
 			$isKeyChanged = false;
 			$connected    = false;
 			ob_start();
