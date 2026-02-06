@@ -3,7 +3,7 @@
  * Plugin Name: Icegram Collect - Easy Form, Lead Collection and Subscription plugin
  * Plugin URI: http://www.icegram.com/addons/icegram-rainmaker/
  * Description: The complete solution to create simple forms and collect leads
- * Version: 1.3.19
+ * Version: 1.3.20
  * Tested up to: 6.8
  * Author: icegram
  * Author URI: http://www.icegram.com/
@@ -130,7 +130,7 @@ if ( ! defined( 'IG_RM_PLUGIN_FILE' ) ) {
 }
 
 if ( ! defined( 'IG_RM_PLUGIN_VERSION' ) ) {
-	define( 'IG_RM_PLUGIN_VERSION', '1.3.19' );
+	define( 'IG_RM_PLUGIN_VERSION', '1.3.20' );
 }
 
 if ( ! defined( 'IG_RM_PRODUCT_ID' ) ) {

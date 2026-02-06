@@ -5,7 +5,7 @@ Tags:  subscription form, contact form, lead capture, mailchimp, wpforms, blog p
 Requires at least: 4.0
 Requires PHP: 5.5
 Tested up to: 6.8
-Stable tag: 1.3.19
+Stable tag: 1.3.20
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -165,13 +165,15 @@ You can add multiple email addresses separated by comma into the email id field 
 
 == Upgrade Notice ==
 
-**1.3.19**
+**1.3.20**
 
-* Update: WordPress 6.8 compatibility check
-* Fix: Added missing authorization and nonce checks [Thanks to the Patchstack team]
-* Fix: Fixed issue where the MailChimp "Verify API Key" button didn't work for existing forms
+* Update: UI/UX improvements
 
 == Changelog ==
+
+**1.3.20**
+
+* Update: UI/UX improvements
 
 **1.3.19**
 

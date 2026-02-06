@@ -1,11 +1,11 @@
 <?php
 global $icegram_rainmaker;
-// BFCM 2022 Campaign
-if ( ( get_option( 'rm_offer_bfcm_2024_icegram' ) !== 'yes' ) && Rainmaker::is_offer_period( 'bfcm') ) { 
-    $img_url = $this->plugin_url . '../assets/images/bfcm-collect-free-pro-banner-2024.png';
+// BFCM 2025 Campaign
+if ( ( get_option( 'rm_offer_bfcm_2025_icegram' ) !== 'yes' ) && Rainmaker::is_offer_period( 'bfcm') ) { 
+    $img_url = $this->plugin_url . '../assets/images/bfcm-collect-free-pro-banner-2025.png';
     $ig_rm_plan = $icegram_rainmaker->get_plan();
     if( 'max' === $ig_rm_plan ){
-        $img_url = $this->plugin_url .'../assets/images/bfcm-common-max-banner-2024.jpg';
+        $img_url = $this->plugin_url .'../assets/images/bfcm-common-max-banner-2025.png';
     }
     //elseif( 'plus' === $ig_rm_plan || 'pro' === $ig_rm_plan ){
     //     $img_url = $this->plugin_url .'../assets/images/bfcm2021_pro.png';
@@ -21,7 +21,7 @@ if ( ( get_option( 'rm_offer_bfcm_2024_icegram' ) !== 'yes' ) && Rainmaker::is_o
 
     </style>
     <div class="ig_rm_offer">
-        <a target="_blank" href="?rm_dismiss_admin_notice=1&rm_option_name=rm_offer_bfcm_2024"><img style="margin:0 auto" src="<?php echo $img_url; ?>"/></a>
+        <a target="_blank" href="?rm_dismiss_admin_notice=1&rm_option_name=rm_offer_bfcm_2025"><img style="margin:0 auto" src="<?php echo $img_url; ?>"/></a>
     </div>
 <?php } ?>
 
