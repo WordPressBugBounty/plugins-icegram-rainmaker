@@ -47,21 +47,21 @@ if ( ! class_exists( 'Rm_Mailer_Mailchimp' ) ) {
 				$dash_position = strpos( $mc_api, '-' );
 
 				if ( $dash_position !== false ) {
-					$api_url = 'https://' . substr( $mc_api, $dash_position + 1 ) . '.api.mailchimp.com/2.0/';
+					$api_url = 'https://' . substr( $mc_api, $dash_position + 1 ) . '.api.mailchimp.com/3.0/lists';
 				} else {
 					return false;
 				}
-				$method         = 'lists/list';
+				
 				$data['apikey'] = $mc_api;
-				$url            = $api_url . $method . '.json';
 
-				$response = wp_remote_post( $url, array(
-						'body'      => $data,
-						'timeout'   => 15,
-						'headers'   => array( 'Accept-Encoding' => '' ),
-						'sslverify' => false
-					)
-				);
+				$response = wp_remote_get($api_url, array(
+					'headers' => array(
+						'Authorization' => 'Bearer ' . $mc_api,
+						'Content-Type' => 'application/json',
+					),
+					'timeout' => 15,
+					'sslverify' => true,
+				));
 				$body     = wp_remote_retrieve_body( $response );
 
 				$request = json_decode( $body );
@@ -147,7 +147,6 @@ if ( ! class_exists( 'Rm_Mailer_Mailchimp' ) ) {
 		*/
 
 		function mailchimp_add_subscriber( $lead, $form_settings ) {
-
 			if ( empty( $form_settings['rm_enable_list'] ) || empty( $form_settings['rm_list_provider'] ) || $form_settings['rm_list_provider'] !== 'mailchimp' ) {
 				return;
 			}
@@ -161,45 +160,51 @@ if ( ! class_exists( 'Rm_Mailer_Mailchimp' ) ) {
 			$status        = 'success';
 			$this->api_key = $api_key;
 			$dash_position = strpos( $api_key, '-' );
-
-			if ( $dash_position !== false ) {
-				$this->api_url = 'https://' . substr( $api_key, $dash_position + 1 ) . '.api.mailchimp.com/2.0/';
-			}
-			$method         = 'lists/subscribe';
-			$data           = array();
-			$data['apikey'] = $this->api_key;
-			$data['id']     = $form_settings[ $form_settings['rm_list_provider'] . '-list' ];
-			//chk if this is working
-			$data['double_optin'] = ( isset( $form_settings['mailchimp-double-optin'] ) ) ? true : false;
-
-			$data['email'] = array(
-				'email' => $lead['email']
-			);
-
-			if ( isset( $lead['name'] ) ) {
-				$data['merge_vars'] = array(
-					'FNAME' => $lead['name']
-				);
-			}
-
-			$api_url  = $this->api_url . $method . '.json';
-			$response = wp_remote_post( $api_url, array(
-					'body'      => $data,
-					'timeout'   => 15,
-					'headers'   => array( 'Accept-Encoding' => '' ),
-					'sslverify' => false
-				)
-			);
-
-			// die($response);
-			// test for wp errors
-			if ( is_wp_error( $response ) ) {
-				error_log( "Something went wrong. Please try again", 0 );
-
+			$list_id =$form_settings['mailchimp-list'];
+			if ( empty( $list_id ) ) {
+				error_log( "List ID is missing", 0 );
 				return;
 			}
 
-			return true;
+			if ( $dash_position !== false ) {
+				$this->api_url = 'https://' . substr( $api_key, $dash_position + 1 ) . '.api.mailchimp.com/3.0/lists/' . $list_id . '/members';
+
+			}
+		
+			$data = array(
+				'email_address' => sanitize_email( $lead['email'] ),
+				'status'        => isset( $form_settings['mailchimp-double-optin'] ) ? 'pending' : 'subscribed', 
+			);
+		
+			if ( isset( $lead['name'] ) ) {
+				$data['merge_fields'] = array(
+					'FNAME' => sanitize_text_field( $lead['name'] ),
+				);
+			}
+
+			$response = wp_remote_post( $this->api_url, array(
+				'body'      => json_encode( $data ),
+				'timeout'   => 15,
+				'headers'   => array(
+					'Authorization' => 'Bearer ' . $this->api_key,
+					'Content-Type'  => 'application/json',
+				),
+				'sslverify' => true, 
+			));
+
+			// Test for WP errors
+			if ( is_wp_error( $response ) ) {
+				error_log( "Mailchimp request failed: " . $response->get_error_message(), 0 );
+				return;
+			}
+			$body = wp_remote_retrieve_body( $response );
+			$request = json_decode( $body, true );
+			if ( isset( $request['status'] ) && $request['status'] === 'subscribed' ) {
+				return true; 
+			} else {
+				error_log( "Mailchimp subscription failed: " . ( isset( $request['detail'] ) ? $request['detail'] : 'Unknown error' ), 0 );
+				return false;
+			}
 		}
 
 
@@ -227,25 +232,22 @@ if ( ! class_exists( 'Rm_Mailer_Mailchimp' ) ) {
 				) ) );
 				die();
 			}
-
 			$this->api_key = $api_key;
 			$dash_position = strpos( $api_key, '-' );
 
 			if ( $dash_position !== false ) {
-				$this->api_url = 'https://' . substr( $api_key, $dash_position + 1 ) . '.api.mailchimp.com/2.0/';
+				$this->api_url = 'https://' . substr( $api_key, $dash_position + 1 ) . '.api.mailchimp.com/3.0/lists';
 			}
-			$method         = 'lists/list';
+			
 			$data['apikey'] = $this->api_key;
-			$url            = $this->api_url . $method . '.json';
-
-			$response = wp_remote_post( $url, array(
-					'body'      => $data,
-					'timeout'   => 15,
-					'headers'   => array( 'Accept-Encoding' => '' ),
-					'sslverify' => false
-				)
-			);
-
+			$response = wp_remote_get($this->api_url, array(
+				'headers' => array(
+					'Authorization' => 'Bearer ' . $this->api_key,
+					'Content-Type' => 'application/json',
+				),
+				'timeout' => 15,
+				'sslverify' => true,
+			));	
 			// test for wp errors
 			if ( is_wp_error( $response ) ) {
 
@@ -258,16 +260,15 @@ if ( ! class_exists( 'Rm_Mailer_Mailchimp' ) ) {
 
 			$body     = wp_remote_retrieve_body( $response );
 			$request  = json_decode( $body );
-			$lists    = (array) $request->data;
+			$lists    = (array) $request->lists;
 			$mc_lists = array();
 			$html     = $query = '';
 			$html     .= '<input placeholder="API Key"type="text" autocomplete="off" id="mailchimp_api_key" class="auth-text-input" name="form_data[mailchimp-auth-key]" value="" style="display:none"/>';
 			$html     .= '<div class="rm-field-row mailchimp-list">';
 			$html     .= '<select id="mailchimp-list" class="rm-list-select" name="form_data[mailchimp-list]">';
-			foreach ( $lists as $offset => $list ) {
-				$html                  .= '<option value="' . $list->id . '">' . $list->name . '</option>';
-				$query                 .= $list->id . '|' . $list->name . ',';
-				$mc_lists[ $list->id ] = $list->name;
+			foreach ($lists as $list) {
+				$html .= '<option value="' . esc_attr($list->id) . '">' . esc_html($list->name) . '</option>';
+				$mc_lists[$list->id] = $list->name;
 			}
 			$html .= '</select>';
 			$html .= '<span class="help_tip admin_field_icon" data-tip="' . __( 'Select list where  you want to sync leads', 'icegram-rainmaker' ) . '"></span>';
@@ -328,49 +329,42 @@ if ( ! class_exists( 'Rm_Mailer_Mailchimp' ) ) {
 		* @Since 1.0
 		*/
 		function rmGetMCLists( $api_key ) {
-			$api_key       = $api_key;
-			$data          = array();
+			
 			$dash_position = strpos( $api_key, '-' );
 
 			if ( $dash_position !== false ) {
-				$api_url = 'https://' . substr( $api_key, $dash_position + 1 ) . '.api.mailchimp.com/2.0/';
+				$api_url = 'https://' . substr( $api_key, $dash_position + 1 ) . '.api.mailchimp.com/3.0/';
 			} else {
 				return false;
 			}
-			$method         = 'lists/list';
-			$data['apikey'] = $api_key;
-			$url            = $api_url . $method . '.json';
+			$method = 'lists';
+			$url = $api_url . $method;
+			$response = wp_remote_get( $url, array(
+				'headers' => array(
+					'Authorization' => 'Bearer ' . $api_key,
+					'Content-Type'  => 'application/json',
+				),
+				'timeout'   => 15,
+				'sslverify' => true,
+			));
 
-			$response = wp_remote_post( $url, array(
-					'body'      => $data,
-					'timeout'   => 15,
-					'headers'   => array( 'Accept-Encoding' => '' ),
-					'sslverify' => false
-				)
-			);
-
-			// test for wp errors
 			if ( is_wp_error( $response ) ) {
 				return false;
-				exit;
 			}
 
 			$body    = wp_remote_retrieve_body( $response );
 			$request = json_decode( $body );
-			if ( isset( $request->status ) ) {
-				if ( $request->status == 'error' && $request->code == 104 ) {
-					return array();
-				}
-			} else {
-				$lists    = (array) $request->data;
+			if ( isset( $request->status ) && $request->status === 'error' && $request->code == 104 ) {
+				return array();
+			}
+			if ( isset( $request->lists ) ) {
 				$mc_lists = array();
-				foreach ( $lists as $offset => $list ) {
+				foreach ( $request->lists as $list ) {
 					$mc_lists[ $list->id ] = $list->name;
 				}
-
 				return $mc_lists;
 			}
-
+			return array();
 		}
 	}
 
