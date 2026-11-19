@@ -238,8 +238,8 @@ if ( ! class_exists( 'Rainmaker' ) ) {
 				$option_name = sanitize_text_field( $_GET['rm_option_name'] );
 				update_option( $option_name . '_icegram', 'yes', false );
 
-				if ( 'rm_offer_bfcm_2025' === $option_name ) {
-					$url = "https://www.icegram.com/rainmaker-pricing-table/?utm_source=in_app&utm_medium=rm_banner&utm_campaign=offer_bfcm_2025";
+				if ( 'rm_offer_bfcm_2026' === $option_name ) {
+					$url = "https://www.icegram.com/coupon-code/bfcm-50-2026/?buy-now=33112&qty=1&with-cart=1&page=6&utm_source=in-app&utm_medium=banner&utm_campaign=bfcm-2026-collect";
 					header( "Location: {$url}" );
 					exit();
 				} else {
@@ -1648,8 +1648,8 @@ if ( ! class_exists( 'Rainmaker' ) ) {
 				$offer_end_time 	= $current_ist_time;
 
 				if ( 'bfcm' === $offer_name ) {
-					$offer_start_time = strtotime( '2025-11-14 12:30:00' ); // Offer start time in IST
-					$offer_end_time   = strtotime( '2025-12-05 12:30:00' ); // Offer end time in IST
+					$offer_start_time = strtotime( '2026-11-18 12:30:00' ); // Offer start time in IST
+					$offer_end_time   = strtotime( '2026-11-30 23:59:59' ); // Offer end time in ISTsdf
 				}
 	
 				$is_offer_period = $current_ist_time >= $offer_start_time && $current_ist_time <= $offer_end_time;

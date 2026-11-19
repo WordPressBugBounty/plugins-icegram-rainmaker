@@ -1,497 +1,213 @@
-=== Icegram Collect - Easy Form, Lead Collection and Subscription plugin  ===
-Contributors: icegram, storeapps, niravmehta, sandhyam, malayladu, asmipatel, kishanranawat
-Donate link: http://www.icegram.com/
-Tags:  subscription form, contact form, lead capture, mailchimp, wpforms, blog post, builder, CRM, CSS, custom form, custom forms, database, email, email services, free WordPress plugin, form, form maker, forms, forms plugin, HTML, JavaScript, Mailpoet, landing page, list, lead, leads, list builder, MailChimp, mailing list, marketing, plugins, webhooks, WordPress, WordPress database, forms, Icegram, form builder,subscription
+=== Icegram Collect – Easy Contact Form, Subscription Form & Lead Collection Plugin for WordPress ===
+Contributors: icegram, storeapps, niravmehta, sandhyam, kishanranawat, sachinpunde, jaysoni, mdivyesh3851
+Donate link: https://www.icegram.com/
+Tags: contact form, subscription form, lead capture, lead generation, custom form
 Requires at least: 4.0
+Tested up to: 7.1
 Requires PHP: 5.5
-Tested up to: 7.0
-Stable tag: 1.3.21
-License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Stable tag: 1.3.22
+License: GPLv3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Get readymade contact forms, email subscription forms and custom forms for your website. Choose from beautiful templates and get started within seconds
+Create ready-made contact forms, email subscription forms & lead capture forms in seconds. Save leads to your WordPress database & sync with ESPs.
 
 == Description ==
 
-### Icegram Collect: Best WordPress Forms & Lead Management Plugin
+**Create high-converting contact forms, newsletter subscription forms, and custom lead capture forms in 3 simple steps — with automatic WordPress database storage, CSV export, and built-in ESP/Webhook sync included free.**
 
-[Icegram Collect](https://www.icegram.com/collect/?utm_source=repo&utm_medium=wpreadme&utm_campaign=icegram_collect_repo) is the ultimate WordPress lead management plugin for creating customizable contact forms and collecting leads. With this plugin, you can quickly create subscription forms, registration forms, and more, then embed them anywhere on your site.
+[**Icegram Collect**](https://www.icegram.com/collect/?utm_source=repo&utm_medium=wpreadme&utm_campaign=icegram_collect_repo) is the lightweight, no-bloat WordPress form and lead management plugin built for site owners who want forms that work out of the box without wrestling with complex drag-and-drop canvas settings.
 
-You'll never miss a potential lead again, as Icegram Collect makes it easy to store emails in your WordPress database. Plus, you can connect with hundreds of external applications, including [Icegram Express](https://wordpress.org/plugins/email-subscribers/), Zapier, IFTTT, and third-party ESPs.
+Unlike basic contact form plugins that only send an email (meaning if your server mail fails, your lead is lost forever) or heavy form builders that lock database entry storage, Mailchimp, HubSpot, and Webhooks behind $100+/year paywalls, Icegram Collect stores every single submission safely in your WordPress database and syncs your leads automatically.
 
-Whether you're using popular WordPress and WooCommerce themes or something custom, **Icegram Collect is compatible with them all**.
+* **Explore Features:** [Icegram Collect Official Page](https://www.icegram.com/collect/?utm_source=repo&utm_medium=wpreadme&utm_campaign=icegram_collect_repo)
+* **Compare Plans:** [Icegram Collect Pricing (Free & Premium)](https://www.icegram.com/collect/pricing/?utm_source=repo&utm_medium=wpreadme&utm_campaign=icegram_collect_repo)
+* **Need Help?** [Contact Icegram Support](https://www.icegram.com/contact/?utm_source=repo&utm_medium=wpreadme&utm_campaign=icegram_collect_repo)
 
-Lead capturing made easy
--   **Collect leads effortlessly**, no coding or design skills required.
+= Why Choose Icegram Collect Over Typical Contact Form Plugins? =
 
--   **Create elegant contact forms** that convert web visitors into customers.
+* **Never Lose a Lead Again (Free Local Database Storage):** Every form submission is automatically saved to your WordPress database alongside instant email notifications — no extra entry-storage add-on required.
+* **3-Step Ready-Made Form Setup:** Skip complex 30-panel builders. Pick a form type (*Subscription Form*, *Contact Form*, or *Custom Form*), choose a clean layout style (or inherit your WordPress theme's styling automatically), and publish.
+* **Unlimited Forms & Unlimited Lead Storage:** Create as many contact forms, opt-in boxes, and inquiry forms as you need with zero caps on stored submissions.
+* **Free ESP, CRM & Webhook Integrations:** Sync captured leads directly with [Icegram Express](https://wordpress.org/plugins/email-subscribers/), Mailchimp, HubSpot, Campaign Monitor, MailPoet, Zapier, and IFTTT in the free version.
+* **Lightweight & Broadly Compatible:** Runs smoothly on WordPress 4.0+ and PHP 5.5 through PHP 8.3+ without slowing down your frontend pages or breaking older hosting environments.
 
--   **Embed WP forms anywhere** in seconds with our shortcodes.
+= Everything You Get in Icegram Collect =
 
--   **Eliminate spambots and fake leads**.
+**1. Ready-Made Contact, Subscription & Custom Forms**
+* Launch **Subscription Forms**, **Contact Forms**, or **Custom HTML Forms** in seconds.
+* Choose from clean, mobile-responsive form designs (including compact layouts) or select **Inherit WordPress Theme Style** so forms blend seamlessly into any theme.
+* Add custom CSS directly inside your form settings when you want bespoke styling.
 
--   **Save leads directly to your database**, no special plugin required.
+**2. Built-In Lead Management Dashboard & CSV Export**
+* View, search (by name or email), filter (by month/year or form), and sort all captured leads from a single organized dashboard inside WordPress.
+* View full lead details including Name, Email, Subject, and Message columns.
+* Export your captured leads to CSV anytime for follow-up or offline reporting.
 
--   **Easily export your leads** for further activities.
+**3. Direct Email Marketing, CRM & Webhook Automation**
+Connect your forms to your favorite marketing tools without writing code:
+* **[Icegram Express (Email Subscribers & Newsletters)](https://wordpress.org/plugins/email-subscribers/):** Automatically add leads to selected subscriber lists/groups.
+* **[Icegram Engage](https://wordpress.org/plugins/icegram/):** Display any Icegram Collect form inside popups, floating hello bars, slide-ins, or welcome mats.
+* **Mailchimp:** Sync subscribers directly to your Mailchimp audiences with one-click API key verification.
+* **HubSpot:** Push captured contacts straight into your HubSpot CRM.
+* **Campaign Monitor & MailPoet:** Add form leads directly to your mailing lists.
+* **Webhooks, Zapier & IFTTT:** Relay form submission data to 2,000+ external apps via Webhooks.
+* **Icegram Collect Premium Integrations:** Unlock native integrations for **ActiveCampaign [Premium]**, **AWeber [Premium]**, and **HubSpot Pro [Premium]** with [Icegram Collect Premium](https://www.icegram.com/collect/pricing/).
 
--   **Comply with GDPR regulations** by displaying the consent box.
+**4. Smart Post-Submission Actions & Multi-Admin Alerts**
+* Display a customized **Thank-You Message** on submission or **Redirect Leads** to any custom thank-you URL or lead magnet download page.
+* Send instant lead notification emails to **one or multiple admin email addresses** (comma-separated).
 
--   **Redirect successful leads** to your desired landing page.
+**5. Built-In Spam Protection & GDPR Compliance**
+* **CAPTCHA Spam Protection:** Block spam bots and fake submissions effortlessly using the built-in CAPTCHA system — no extra anti-spam plugin required.
+* **GDPR Consent Field:** Add a customizable GDPR consent checkbox (with HTML link support for your Privacy Policy) to any form.
+* **100% Data Ownership:** Open-source and self-hosted — your leads are stored on your own WordPress server, never on our servers.
 
--   **Automate leads with ease** by connecting Icegram Collect to top email service providers and automation platforms like IFTTT, Zapier, and more.
+= Embed Your Forms Anywhere in WordPress =
 
-**Don't lose leads** due to email issues or lack of local storage in WordPress. With most contact form and subscription plugins, this is a common problem. But with Icegram Collect’s lead automation, you'll never miss a lead again. Store a copy of your lead submission data, organize leads, and export WordPress form submissions with ease.
+* **Shortcodes:** Drop `[rainmaker_form id="..."]` into any post, page, Gutenberg Shortcode block, Elementor widget, or page builder layout.
+* **Sidebar & Footer Widgets:** Add forms to any widget area using the dedicated Icegram Collect widget or a standard Text widget.
+* **Popups, Slide-Ins & Welcome Bars:** Pair seamlessly with [Icegram Engage](https://wordpress.org/plugins/icegram/) to trigger high-converting opt-in forms on exit-intent, scroll, or time delay.
 
-<em>Learn how to install the Icegram Collect plugin and get started - [Installation Guide](https://www.icegram.com/documentation/how-to-create-a-form-in-rainmaker/?utm_source=repo&utm_medium=wpreadme&utm_campaign=icegram_collect_repo)</em>
+= What WordPress Site Owners Say About Icegram Collect =
 
-<em>View all documentation to harness the power of WP forms - [Knowledge Base](https://www.icegram.com/knowledgebase_category/rainmaker-help/?utm_source=repo&utm_medium=wpreadme&utm_campaign=icegram_collect_repo)</em>
+> "One of the best form builders I could find. Others are complex and require money for even basic features. Icegram Collect gives a lot for free and is easy to use." – **Aswin**
 
-### Why People Trust Icegram Collect's Free Forms Plugin for Building Custom Forms and Storing Leads
+> "Works perfect with Icegram Engage and increases your subscribers list on Mailchimp and Icegram Express email subscribers and newsletter plugin. Great support! Must try it!" – **Lombra**
 
-Icegram Collect free WordPress contact form maker plugin is the **simplest form and lead management plugin** developed by Icegram developers. It has been useful to many bloggers, freelancers, and entrepreneurs for collecting and processing web leads.
+> "Great plugins with absolutely amazing tech support (Icegram Collect & Icegram Engage in my case)... As a developer who handles many clients it makes my life easier. A great experience all around." – **ttrusty**
 
-Icegram Collect lead storing plugin is widely trusted by smart WordPress website owners because it is
+> "Best tool for collecting emails on your site!" – **wishmasta**
 
--   Free and trusted lead plugin in WordPress repository
--   Robust support for all users, even free ones
--   3-step simple form campaign setup for time-saving
--   No design or development skills required
--   Comprehensive product documentation and video tutorials
--   Helpful blog posts for online business growth
+= Other Popular Plugins from the Icegram Team =
 
-It does what it actually promotes. No complex settings and no drag-and-drop elements. Just a form that works. Simple yet robust lead management plugin for WordPress website.
-
-### Icegram Collect: Boost Your Lead Collection with Powerful Features
-
-Icegram Collect responsive form plugin comes with powerful features without any bloats. Collect verified leads, store them locally and grow your list with zero hassles.
-
-Here are some of the popular Icegram Collect features
-
-1. Simple and clean plugin user interface
-2. Unlimited WP forms and leads storage
-3. Integrates with top email marketing platforms & SaaS
-4. Sync with thousands of apps using IFTTT and Zapier
-5. Combat spam bots with our Captcha system
-6. Display custom thank you messages
-7. Filter, sort and view leads in a single place
-8. Truly open source - you own your data.
-
-Check Icegram Collect’s [official features page](https://www.icegram.com/collect/?utm_source=repo&utm_medium=wpreadme&utm_campaign=icegram_collect_repo) for detailed info.
-
-#### 1.  Simple and clean plugin user interface
-Icegram Collect is an easy-to-use WordPress form builder plugin that helps website owners focus on creating their web forms in seconds.
-
-#### 2. Unlimited forms and leads storage
-You can create unlimited inquiry forms and subscription boxes. No restrictions or limitations in saving leads into your own server.
-
-#### 3. Integrates with top email marketing platforms & SaaS
-Integrate your form plugin with popular ESPs and SaaS platforms such as 
--   Hubspot
--   Mailchimp
--   Campaign Monitor
--   Email Subscribers
--   Icegram
--   MadMimi [Premium]
--   Active Campaign [Premium]
--   Hubspot Pro [Premium]
--   Aweber [Premium]
-
-#### 4. Sync with thousands of apps using IFTTT and Zapier
-Relay form submission data to any other service with webhooks. If you use IFTTT or Zapier, you can integrate with 2000+ apps.
-
-#### 5. Combat spambots with our Captcha system
-Combat spam and bot attacks effortlessly with Icegram Collect's built-in Captcha system. No need for extra plugins. Secure your WordPress contact forms with ease.
-
-#### 6. Display custom thank you messages
-You can display a custom “thank you message” when someone submits their data. You can even redirect leads to a specific thank you page.
-
-#### 7. Filter, sort and view leads in a single place
-Effortlessly manage your leads with Icegram Collect's organized database. Find the right leads quickly with powerful search and filtering options.
-
-#### 8. Truly open source - you own your data
-Icegram Collect form creator is an open-source plugin and it doesn’t save any of your leads on our system. You own your data.
-
-### See What Our Users Are Saying About Icegram Collect 
-
-> 👉 **Great Form Builder!**
-> One of the best form builders I could find. Others are complex and require money for even basic features. Icegram Collect gives a lot for free and is easy to use.
-> - [Aswin](https://wordpress.org/support/topic/great-free-form-builder/)
-
-> 👉 **Must use plugin to collect leads on your website**
-> Works perfect with Icegram Engage and increases your subscribers list on Mailchimp and Icegram Express email subscribers and newsletter plugin. Great support! Must try it!
-> - [Lombra](https://wordpress.org/support/topic/nice-to-use-simple-wp-email-form/)
-
-[Premium Icegram Collect Plugin](https://www.icegram.com/collect/pricing/?utm_source=repo&utm_medium=wpreadme&utm_campaign=icegram_collect_repo)
-
-## Some of our other free plugins on WordPress.org
-
-[Icegram Express](https://wordpress.org/plugins/email-subscribers/) - Complete newsletter plugin
-
-[Icegram Engage](https://wordpress.org/plugins/icegram/) - Popups, Welcome Bar, Opt-Ins and Lead Generation Plugin
-
-[Temporary Login Without Password](https://wordpress.org/plugins/temporary-login-without-password/) -It's a handy tool to support our customers. We use it daily.
-
-[Smart Manager](https://wordpress.org/plugins/smart-manager-for-wp-e-commerce/) - Manage & Bulk edit Products, Orders & more..
-
-[Offermative](https://wordpress.org/plugins/offermative-discount-pricing-related-products-upsell-funnels-for-woocommerce/) - Dynamic discount pricing, related product recommendations, upsells and funnels for WooCommerce.
-
-[Signup for Free](https://www.icegram.com/engage/pricing/?utm_source=repo&utm_medium=wpreadme&utm_campaign=icegram_collect_repo) | [Resources](https://www.icegram.com/blog/?utm_source=repo&utm_medium=wpreadme&utm_campaign=icegram_collect_repo) | [Knowledge Base](https://www.icegram.com/knowledgebase_category/icegram/?utm_source=repo&utm_medium=wpreadme&utm_campaign=icegram_collect_repo) | [Contact Support](https://www.icegram.com/contact/?utm_source=repo&utm_medium=wpreadme&utm_campaign=icegram_collect_repo)
-
-== Frequently Asked Questions ==
-
-= Is Icegram Collect compatible with Icegram Express? =
-
-Yes, Icegram Collect is compatible with Icegram Express.
-
-= How to send notification email of a new lead to more than one email address? =
-
-You can add multiple email addresses separated by comma into the email id field under the Form Actions tab. Whenever a new lead is captured, all entered email addresses will receive the notification email.
+* [**Email Subscribers & Newsletters (Icegram Express)**](https://wordpress.org/plugins/email-subscribers/) – Complete self-hosted email marketing, newsletters, post notifications, and WooCommerce automation.
+* [**Icegram Engage**](https://wordpress.org/plugins/icegram/) – High-converting popups, welcome bars, slide-ins, opt-ins, and lead generation campaigns.
+* [**Icegram Mailer**](https://wordpress.org/plugins/icegram-mailer/) – Reliable email deliverability, no-code SMTP replacement, and email logs for WordPress.
+* [**Temporary Login Without Password**](https://wordpress.org/plugins/temporary-login-without-password/) – Create self-expiring admin login links for developers and support teams.
+* [Duplicate Pages and Posts](https://wordpress.org/plugins/duplicate-post-page-copy-clone-wp/) – One-click clone WordPress posts and pages into drafts.
+* [**Icegram Cookie Manager**](https://wordpress.org/plugins/icegram-cookie-manager/) – Fast, free GDPR and CCPA cookie consent banner for WordPress.
+* [**Smart Manager**](https://wordpress.org/plugins/smart-manager-for-wp-e-commerce/) – Bulk-edit WooCommerce products, orders, coupons, and WordPress posts in an Excel-like spreadsheet.
 
 == Installation ==
 
-1. Unzip and upload contents of the plugin to your /wp-content/plugins/ directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Click on 'Icegram Collect' option within WordPress admin sidebar menu
+= Option 1: Install Directly from Your WordPress Dashboard (Recommended) =
 
+1. Log in to your WordPress Admin Dashboard and navigate to **Plugins > Add New**.
+2. Search for **Icegram Collect**.
+3. Click **Install Now** next to *Icegram Collect – Easy Contact Form, Subscription Form & Lead Collection Plugin for WordPress*, then click **Activate**.
+4. Click **Icegram Collect** in your WordPress admin sidebar to create your first Contact or Subscription form in 3 steps.
+
+= Option 2: Manual ZIP Upload =
+
+1. Download the `icegram-rainmaker.zip` archive from the [WordPress.org plugin page](https://wordpress.org/plugins/icegram-rainmaker/).
+2. In your WordPress Admin Dashboard, go to **Plugins > Add New > Upload Plugin**, select `icegram-rainmaker.zip`, click **Install Now**, and click **Activate Plugin**.
+
+== Frequently Asked Questions ==
+
+= Does Icegram Collect save form submissions to my WordPress database for free? =
+
+Yes. Every form submission is automatically stored in your WordPress database under **Icegram Collect > Leads**, even in the free version. Even if your web host's outgoing email fails, you will never lose a lead.
+
+= Are there any limits on the number of forms or leads I can collect? =
+
+No. You can create **unlimited forms** and store **unlimited leads** in your WordPress database with no monthly caps or paid entry unlocks.
+
+= How does Icegram Collect compare to Contact Form 7 or WPForms Lite? =
+
+Contact Form 7 does not store form submissions in the database by default (requiring a separate plugin) and recently restricted older PHP environments. WPForms Lite locks database entry viewing, CSV exports, Mailchimp, HubSpot, and Webhooks behind paid Pro tiers. Icegram Collect gives you a simple 3-step form creator with **built-in database lead storage, CSV export, Mailchimp, HubSpot, Campaign Monitor, MailPoet, [Icegram Express](https://wordpress.org/plugins/email-subscribers/), and Webhooks** included free.
+
+= Is Icegram Collect compatible with Icegram Express (Email Subscribers)? =
+
+Yes. Icegram Collect integrates natively with [Icegram Express](https://wordpress.org/plugins/email-subscribers/). Under the **Form Actions** tab, simply select **Icegram Express** and choose which subscriber list/group your new leads should be added to automatically.
+
+= How do I send lead notification emails to multiple email addresses? =
+
+In your form's **Form Actions** tab, enter multiple recipient email addresses separated by a comma (`,`) in the notification email field. Every time a new lead is submitted, all listed addresses will receive an instant email alert.
+
+= How do I create a Custom Form that syncs with Icegram Express or Mailchimp? =
+
+When creating a **Custom Form**, include standard input fields for name (`name="name"`) and email (`name="email"`). Icegram Collect maps those fields automatically to your local Leads database and any connected mailing list (such as [Icegram Express](https://wordpress.org/plugins/email-subscribers/) or Mailchimp) selected under **Form Actions**.
+
+= Can I display an Icegram Collect form inside a popup, slide-in, or welcome bar? =
+
+Yes. When you use [Icegram Engage](https://wordpress.org/plugins/icegram/), you can select any Icegram Collect form directly inside your popup, header bar, or slide-in campaign — or paste the Icegram Collect form shortcode into any popup plugin.
+
+= How do I connect my forms to Zapier, IFTTT, or external apps? =
+
+In the **Form Actions** tab of your form, enable the **Trigger a Webhook** option and paste your Webhook URL from Zapier, IFTTT, Make (Integromat), or your custom endpoint. Icegram Collect will automatically POST the submitted lead data on every submission.
+
+= Is Icegram Collect GDPR compliant? =
+
+Yes. All leads are stored locally on your own WordPress server (never on Icegram servers unless you explicitly connect a third-party integration), and you can enable a customizable **GDPR Consent Checkbox** (with HTML links to your Privacy Policy) on any form.
+
+= How do I redirect visitors to a Thank-You page or download link after submitting a form? =
+
+Under the **Form Actions** tab, enable **Redirect to URL** and enter the destination URL of your thank-you page or lead magnet download.
+
+= Will Icegram Collect match my WordPress theme's fonts and colors? =
+
+Yes. In the **Design** step of your form, you can choose **Inherit WordPress Theme Style** so the form automatically adopts your active theme's typography and button styling, or choose one of the built-in responsive form templates.
 
 == Screenshots ==
-1. Select a form type - Subscription form, Contact form and Custom Form
-2. Pick a design template
-3. Choose the actions that will happen after a form is submitted
-4. Embed the Icegram Collect form anywhere on your website
-5. Embed the Icegram Collect form within a text widget
-6. Embed the Icegram Collect form in a popup
-7. Collect leads on your WordPress site
 
-== Upgrade Notice ==
-
-**1.3.21**
-* Update: Tested up to WordPress 7.0
-* Fix: Deprecated warnings with PHP 8.2+
-* Fix: Mailchimp subscriber data sync issue
+1. Select a Form Type – Create a Subscription Form, Contact Form, or Custom Form in seconds.
+2. Pick a Design Template – Choose from clean, mobile-responsive form layouts or inherit your WordPress theme style.
+3. Configure Form Actions – Save leads to the database, sync with ESPs/CRMs, send multi-admin email alerts, or trigger webhooks.
+4. Embed Anywhere – Copy the form shortcode to place forms on any page, post, or builder layout.
+5. Sidebar & Footer Widgets – Embed forms inside WordPress text or sidebar widgets.
+6. Popup Integration – Display your Icegram Collect form inside an [Icegram Engage](https://wordpress.org/plugins/icegram/) popup or welcome bar.
+7. Centralized Leads Dashboard – Search, filter, sort, and manage all captured leads inside WordPress.
 
 == Changelog ==
 
-**1.3.21**
+= 1.3.22 =
+* Update: Tested up to WordPress 7.1.5
+* Fix: Resolved PHP 8.2+ deprecation warnings
 
-* Update: Tested up to WordPress 7.0
+= 1.3.21 =
+* Update: Tested up to WordPress 7.1.3
 * Fix: Deprecated warnings with PHP 8.2+
 * Fix: Mailchimp subscriber data sync issue
 
-**1.3.20**
-
+= 1.3.20 =
 * Update: UI/UX improvements
 
-**1.3.19**
-
+= 1.3.19 =
 * Update: WordPress 6.8 compatibility check
 * Fix: Added missing authorization and nonce checks [Thanks to the Patchstack team]
 * Fix: Fixed issue where the MailChimp "Verify API Key" button didn't work for existing forms
 
-**1.3.18**
-
+= 1.3.18 =
 * Fix: HTML tags getting removed in GDPR field
 
-**1.3.17**
-
+= 1.3.17 =
 * Update: WordPress 6.6 compatibility check
 
-**1.3.16**
-
+= 1.3.16 =
 * Update: UI/UX improvements
 
-**1.3.15**
-
+= 1.3.15 =
 * Update: WordPress 6.6 compatibility check
-* Fix: Missing authorization and nonce checks when connecting to Hubspot [ Thanks to Patchstack team ]
+* Fix: Missing authorization and nonce checks when connecting to HubSpot [Thanks to Patchstack team]
 
-**1.3.14**
+= 1.3.14 =
+* Fix: PHP Notice: Undefined index: HTTP_ORIGIN
 
-* Fix: PHP Notice:  Undefined index: HTTP_ORIGIN
-
-**1.3.13**
-
+= 1.3.13 =
 * Fix: Small bug fix
 
-**1.3.12**
-
+= 1.3.12 =
 * Update: UI/UX improvements
 
-**1.3.11**
-
+= 1.3.11 =
 * Update: UI/UX improvements
 * Update: WordPress 6.2.2 compatibility check
 
-**1.3.10**
-
+= 1.3.10 =
 * Update: WordPress 6.1.2 compatibility check
 * Fix: Database error for filtering leads based on Month/Year
 
-**1.3.9**
+== Upgrade Notice ==
 
-* Fix: Improved security related to XSS [Thanks to PatchStack team]
-* Fix: Database error for unknown columns while filtering leads
-
-**1.3.8**
-
-* Fix: Small bug fixes
-
-**1.3.7**
-
-* Update: WordPress 6.1.1 compatibility test
-
-**1.3.6**
-
-* Update: UI improvements
-
-**1.3.5**
-
-* Update: WordPress 6.0.2 compatibility test
-* Update: Small bug fixes
-
-**1.3.4**
-
-* Update: WordPress 6.0.1 compatibility test
-* Update: Small bug fixes
-
-**1.3.3**
-
-* Update: WordPress 6.0 compatibility test
-* Update: UI improvements
-
-**1.3.2**
-
-* Bug Fix release
-
-**1.3.1**
-
-* Update: WordPress 5.8.1 compatibility test
-* Update: UI improvements
-
-**1.3.0**
-
-* Update: UI/UX improvements
-* Fix: Icegram account connection issue [Premium]
-
-**1.2.9**
-
-* Update: WordPress 5.8 compatibility test
-* Update: UI improvements
-
-**1.2.8.1**
-
-* Fix: Fixed PHP Fatal error - Uncaught Error: Using $this when not in object context
-
-**1.2.8**
-
-* Update: WordPress 5.7 compatibility check
-* Update: UI improvements
-
-**1.2.7**
-
-* New: Send subscription notification to multiple email addresses
-
-**1.2.6**
-
-* Update: PHP 8.0 compatibility
-
-**1.2.5**
-
-* Update: WordPress 5.6 compatibility check
-* Update: UI improvements
-
-**1.2.4**
-
-* Update: WordPress 5.5.3 compatibility check
-* Update: UI improvements
-
-**1.2.3**
-
-* Update: UI improvements
-
-**1.2.2**
-
-* Update: Compatibility check with WordPress 5.5
-
-**1.2.1**
-
-* Added GDPR support
-
-**1.2**
-
-* Bug Fix release
-
-**1.1**
-
-* Fix: Small bug fixes
-
-**1.0**
-
-* New: Added 'Subject' and 'Message' column to the leads dashboard
-* Fix: Security issues
-
-**0.39**
-
-* Fix: Icegram Express(formerly known as Email Subscribers & Newsletters) option missing from mailing list when ES Premium (>**4.3.0) installed and activated
-
-**0.38**
-
-* Update: Compatibility with WordPress 5.2.2
-
-**0.37**
-
-* Fix: Secured Icegram Collect with a wp_remote call instead of CURL
-
-**0.36**
-
-* Update: Internal changes for better performance
-
-**0.35**
-
-* Fix: Small bug fixes
-
-**0.34**
-
-* Fix: Search by name and email not working in leads dashboard
-
-**0.33**
-
-* New: [GDPR] Provision for consent checkbox in form [Steps to enable it](https://www.icegram.com/documentation/gdpr-how-to-enable-consent-checkbox-in-the-form/?utm_source=repo&utm_medium=wpreadme&utm_campaign=icegram_collect_repo)
-
-**0.32**
-
-* New: Added compact layout option for forms
-* Update: Compatibility with latest [Icegram Express](https://wordpress.org/plugins/email-subscribers/) (formerly known as Email Subscribers & Newsletters)
-
-**0.31**
-
-* Fix: Fixed the "Warning: Parameter 2 to Rainmaker::rm_custom_search_query_string() expected to be a reference, value given"
-
-**0.30**
-
-* New: Ability to search leads within the list
-
-**0.29**
-
-* Update: Internal changes for better performance
-
-**0.28**
-
-* Update: Compatibility with WordPress 4.9
-
-**0.27**
-
-* Fix: Small bug fixes
-
-**0.26**
-
-* Update: Compatibility with WordPress 4.8.2
-
-**0.25**
-
-* Fix: Small bug fixes
-
-**0.24**
-
-* Fix: Loader image wasn't displaying while submitting the form
-
-**0.23**
-
-* New: Added Support and Upgrade page within Icegram Collect
-* Fix: Fixed the "Fatal error: Cannot redeclare class HubSpot_BaseClient"
-
-**0.22**
-
-* Fix: Fix for inherit WordPress theme style button
-* Update: 'Icegram Express' (formerly known as Email Subscribers & Newsletters) compatibility with new options
-
-**0.21**
-
-* New: Added custom css support for form
-
-**0.20**
-
-* Update: Internal changes for better performance
-
-**0.19**
-
-* Enhancement: Added option to select groups of 'Icegram Express' (formerly known as Email Subscribers & Newsletters) during form creation
-
-**0.18**
-
-* Fix: Loader image wasn't getting hidden in case of some WordPress themes
-* Fix: Redirection URL was not working
-
-**0.17**
-
-* New: Added integration for [HubSpot](https://www.hubspot.com/)
-* Enhancement: Added more security for forms
-* Fix: Added jQuery dependency in Icegram Collect
-
-**0.16.1**
-
-* Fix: "Blank / White Screen of death" / Fatal error - Failed opening required ‘mailers/campaignmonitor.php’ 
-
-**0.16**
-
-* Enhancement: Forms made mobile responsive 
-
-**0.15**
-
-* New: Release new Icegram Collect Plus
-* Fix: Fatal error - Failed opening required ‘mailers/rainmaker.php’ 
-
-**0.14.2**
-
-* Fix: "Blank / White Screen of death" / Fatal error - Failed opening required ‘mailers/email_subscribers.php’ 
-
-**0.14.1**
-
-* Fix: Loader was continuously spinning while switching mailing list
-
-**0.14**
-
-* New: Added integration for Campaign Monitor
-* New: Leads from Forms can now be send to [Mailpoet](https://wordpress.org/plugins/wysija-newsletters/)
-
-**0.13**
-
-* New: Added option to inherit wordpress theme style for form 
-* New: Improved form css for text widget
-* Fix: Custom forms were not getting display
-
-**0.12**
-
-* Fix: Subscribers were not getting added to Mailchimp list
-
-**0.11**
-
-* New: Added Contact form
-
-**0.10**
-
-* New: Added Email notification when a form is submitted
-* Fix: Form submission was throwing 404 error
-* Fix: Subscribers were not getting added to Icegram Express's (formerly known as Email Subscribers & Newsletters) list
-
-**0.9**
-
-* New: Added support for redirection after successful form submission
-* New: Icegram Collect form compatibility with Icegram's Remote addon
-
-**0.8**
-
-* Fix: Compatibility with Icegram Engage and Icegram Engage's CTA addon
-
-**0.7**
-
-* New: Leads from Forms can now be send to [Icegram Express](https://wordpress.org/plugins/email-subscribers/)
-
-**0.6**
-
-* New: Custom forms can be added in Icegram Collect
-* New: Existing forms in [Icegram Engage](https://wordpress.org/plugins/icegram) messages will automatically imported
-
-**0.5**
-
-* New: Initial Release
+= 1.3.22 =
+Resolved PHP 8.2+ deprecation warnings and verified compatibility up to WordPress 7.1.5.
